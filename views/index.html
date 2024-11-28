@@ -6,10 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Földes Ferenc Gimnázium</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
 
-    
+    <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
+
+    <script>
+        // Toggle dark mode on button click
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+
+            // Store the preference in localStorage
+            const isDarkMode =       document.body.classList.contains("dark-mode");
+            localStorage.setItem("dark-mode", isDarkMode ? "enabled" : "disabled");
+        }
+
+        // Apply the user's preferred theme on page load
+        window.addEventListener("load", () => {
+            if (localStorage.getItem("dark-mode") === "enabled") {
+                document.body.classList.add("dark-mode");
+            }
+        });
+    </script>
+
     <style>
         body {
             background-color: white;
@@ -49,29 +68,9 @@
             background-color: #444;
             color: white;
         }
+
     </style>
 
-    <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
-    
-
-    <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
-    <script>
-        // Toggle dark mode on button click
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
-
-            // Store the preference in localStorage
-            const isDarkMode = document.body.classList.contains("dark-mode");
-            localStorage.setItem("dark-mode", isDarkMode ? "enabled" : "disabled");
-        }
-
-        // Apply the user's preferred theme on page load
-        window.addEventListener("load", () => {
-            if (localStorage.getItem("dark-mode") === "enabled") {
-                document.body.classList.add("dark-mode");
-            }
-        });
-    </script>
 </head>
 <body>
 
@@ -80,9 +79,7 @@
     </header>
 
     <main>
-        <p>Welcome to the main content area!</p>
-
-        
+        <p>Welcome to the main content area!</p>        
     </main>
 
 </body>
