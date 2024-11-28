@@ -7,71 +7,10 @@
     <title>Földes Ferenc Gimnázium</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-    
-    <style>
-        body {
-            background-color: white;
-            color: black;
-            font-family: 'Roboto', sans-serif;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        nav {
-            background-color: rgb(211, 211, 211); /* Light background for the header */
-            color: black; /* Dark text for the header */
-            padding: 10px;
-            font-size: 18px;
-        }
-
-        button {
-            font-size: 16px;
-            font-family: 'Roboto', sans-serif;
-            cursor: pointer;
-        }
-
-        /* Dark Mode */
-        body.dark-mode {
-            background-color: #121212;
-            color: #ffffff;
-        }
-
-        body.dark-mode nav {
-            background-color: #333;
-        }
-
-        body.dark-mode a {
-            color: #ffffff;
-        }
-
-        body.dark-mode button {
-            background-color: #444;
-            color: white;
-        }
-    </style>
-
     <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
-    
-
-    <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
-    <script>
-        // Toggle dark mode on button click
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
-
-            // Store the preference in localStorage
-            const isDarkMode = document.body.classList.contains("dark-mode");
-            localStorage.setItem("dark-mode", isDarkMode ? "enabled" : "disabled");
-        }
-
-        // Apply the user's preferred theme on page load
-        window.addEventListener("load", () => {
-            if (localStorage.getItem("dark-mode") === "enabled") {
-                document.body.classList.add("dark-mode");
-            }
-        });
-    </script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -81,25 +20,9 @@
 
     <main>
         <p>Welcome to the main content area!</p>
-
-        
     </main>
 
 </body>
 </html>
 {{ end }}
 
-{{ define "header" }}
-    <nav style="display: flex; justify-content: space-between; padding: 10px; color: bisque;">
-        <!-- Navigation Links -->
-        <div>
-            <a style="margin-right: 40px;" href="/">Home</a>
-            <a style="margin-right: 40px;" href="/about">About</a>
-            <a style="margin-right: 40px;" href="/about">For Parents</a>
-            <a style="margin-right: 40px;" href="/about">For Students</a>
-        </div>
-
-        <!-- Dark Mode Toggle Button -->
-        <button onclick="toggleDarkMode()" style="margin-left: auto;">Toggle Dark Mode</button>
-    </nav>
-{{ end }}
